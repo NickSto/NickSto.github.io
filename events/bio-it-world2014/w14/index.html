@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Workshop 14: Running a Local Galaxy Instance - Galaxy Community Hub: The Squeakquel</title><meta name="gridsome:hash" content="833cd7e24cd461bad7de6bb0d6be755efc588fb3"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.23"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="All about Galaxy and its community"><link data-vue-tag="ssr" rel="icon" href="data:,"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="16x16" href="/assets/static/favicon.ce0531f.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="32x32" href="/assets/static/favicon.ac8d93a.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="96x96" href="/assets/static/favicon.b9532cc.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="76x76" href="/assets/static/favicon.f22e9f3.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="152x152" href="/assets/static/favicon.62d22cb.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="120x120" href="/assets/static/favicon.1539b60.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="167x167" href="/assets/static/favicon.dc0cdc5.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/static/favicon.7b22250.9bb7ffafafc09ac851d81afb65b8ef59.png"><link rel="preload" href="/assets/css/0.styles.28333459.css" as="style"><link rel="preload" href="/assets/js/app.3f954f94.js" as="script"><link rel="preload" href="/assets/js/page--src--templates--article-vue.fd74c3ce.js" as="script"><link rel="prefetch" href="/assets/js/page--node-modules--gridsome--app--pages--404-vue.69e23ace.js"><link rel="prefetch" href="/assets/js/page--src--pages--blog-vue.fea65a77.js"><link rel="prefetch" href="/assets/js/page--src--pages--careers-vue.ed036ffd.js"><link rel="prefetch" href="/assets/js/page--src--pages--data-explorer-vue.d8a72513.js"><link rel="prefetch" href="/assets/js/page--src--pages--events--archive-vue.44146ad8.js"><link rel="prefetch" href="/assets/js/page--src--pages--events--cofests--papercuts-vue.142add87.js"><link rel="prefetch" href="/assets/js/page--src--pages--events--cofests-vue.0ffb3e7b.js"><link rel="prefetch" href="/assets/js/page--src--pages--events--webinars-vue.e0ca50b4.js"><link rel="prefetch" href="/assets/js/page--src--pages--events-vue.abaed4a3.js"><link rel="prefetch" href="/assets/js/page--src--pages--index-vue.7a67e3cf.js"><link rel="prefetch" href="/assets/js/page--src--pages--news-vue.3e393dc6.js"><link rel="prefetch" href="/assets/js/page--src--pages--tests-vue.0f9a28da.js"><link rel="prefetch" href="/assets/js/page--src--pages--use-vue.05642a19.js"><link rel="prefetch" href="/assets/js/page--src--templates--platform-vue.2c2e66ff.js"><link rel="prefetch" href="/assets/js/page--src--templates--vue-article-vue.e97b1ff5.js"><link rel="prefetch" href="/assets/js/vendors~page--src--pages--careers-vue~page--src--pages--use-vue~page--src--templates--article-vue~pa~efade918.6ddcbcd7.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--0-tests--index-md.a9a7f97b.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--0-tests--md--imgtests--imgdir--index-md.20db75aa.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--0-tests--partials--index-md.974965a9.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--0-tests--vue-remark--imgtests--imgdir--index-md.95f2e4fa.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--0-tests--vue-remark--imgtests--index-md.863af31a.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--0-tests--vue-remark--index-md.5eceb838.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--0-tests--vue-remark--syntaxtests--index-md.ebc6d598.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--0-tests--vue-remark--syntaxtests--reldir--index-md.974d5af7.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--admin--capacity-planning--index-md.4698b700.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--admin--config--index-md.a5dc8a78.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--admin--config--performance--cluster--legacy--index-md.27cc25db.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--admin--datatypes--index-md.d0d539ab.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--admin--disk-quotas--index-md.476a2c6b.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--admin--faq--index-md.d4fef409.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--admin--internals--data-model--index-md.6955b285.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--admin--internals--galaxy-ops--index-md.5d5fd2ac.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--admin--ten-simple-steps-galaxy-as-a-service--index-md.f8a391f8.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--admin--tools--tool-config-syntax--index-md.81e2d472.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--admin--tools--writing-tests--index-md.e227a0c9.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--cloud--jetstream--allocation--index-md.b12c3c22.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--cloud--jetstream--faq--index-md.2d8a0fe4.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--cloud--jetstream--index-md.0580b74f.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--cloud--jetstream--ssh--index-md.aabdb28e.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--cloud--jetstream--troubleshooting--index-md.a6a377cc.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--cloudman--aws--capacity-planning--index-md.7d8d239c.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--cloudman--aws--getting-started--index-md.6fa8c6de.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--cloudman--aws--index-md.633f9b98.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--cloudman--building--index-md.564a0c1a.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--cloudman--capacity-planning--index-md.15b4220a.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--cloudman--cluster-types--index-md.9284b936.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--cloudman--customizing--index-md.d3fdb9ef.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--cloudman--faq--index-md.b1f5b2c8.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--cloudman--getting-started--index-md.85206a8b.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--cloudman--getting-started--pre-201703--index-md.e1d60c54.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--cloudman--hadoop--index-md.53a10360.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--cloudman--ht-condor--index-md.ac499499.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--cloudman--index-md.b7c2bff3.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--cloudman--openstack--index-md.def581fc.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--cloudman--services--index-md.9e382cf2.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--cloudman--sharing--index-md.a1bf4ead.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--cloudman--troubleshooting--index-md.9e533733.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--cloudman--userdata--index-md.12caa6c0.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--community--galaxy-admins--future--index-md.2b4e37c0.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--community--galaxy-admins--index-md.b1ddee14.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--community--galaxy-admins--meetups--2012-07-09--index-md.d11a074f.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--community--galaxy-admins--meetups--2012-07-27--index-md.bf031429.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--community--galaxy-admins--meetups--2012-09-19--index-md.660d416c.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--community--galaxy-admins--meetups--2012-11-14--index-md.a5623ebf.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--community--galaxy-admins--meetups--2013-01-16--index-md.60ac404f.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--community--galaxy-admins--meetups--2013-03-20--index-md.6b53afb3.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--community--galaxy-admins--meetups--2013-05-15--index-md.971cbf99.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--community--galaxy-admins--meetups--2013-11-20--index-md.3ee57ed1.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--community--galaxy-admins--meetups--2015-02-19--index-md.9b90a14d.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--community--galaxy-admins--meetups--2015-04-16--index-md.564fbed0.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--community--galaxy-admins--meetups--2015-06-18--index-md.6407e4c6.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--community--galaxy-admins--meetups--2015-08-20--index-md.edf4c2c5.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--community--galaxy-admins--meetups--2015-10-15--index-md.c37f2249.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--community--galaxy-admins--meetups--2016-02-18--index-md.d12454c6.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--community--galaxy-admins--meetups--2016-04-21--index-md.b5ab06ca.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--community--galaxy-admins--meetups--2016-06-16--index-md.2ba12aa2.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--community--galaxy-admins--meetups--2016-08-18--index-md.1ff2d43a.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--community--galaxy-admins--meetups--index-md.dc7ac368.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--community--galaxy-admins--meetups--webinar-tech--index-md.017a36c3.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--community--galaxy-admins--surveys--2012--index-md.fcb09dd0.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--community--galaxy-admins--surveys--2014--index-md.ff656241.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--community--galaxy-admins--surveys--index-md.bda33db9.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--data--index-md.6e9b41bf.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--datafiles--index-md.67df9f9f.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--develop--architecture--index-md.2cee1b53.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--develop--bitbucket--index-md.ed7dbd89.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--develop--css--index-md.87efddea.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--develop--getting-started--index-md.afce6f1b.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--develop--index-md.698a399f.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--develop--jsa--index-md.197de4da.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--develop--mercurial--index-md.01d5eb29.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--develop--security-tool-tips--index-md.e55ab5cd.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--documents--galaxy-project--index-md.570e10c2.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--documents--index-md.bb4ced1c.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--documents--papers--index-md.b6c0c9d0.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--documents--posters--index-md.a3b1008c.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--documents--presentations--index-md.50dfb6ad.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--documents--videos--index-md.b7b3a584.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--admin-training-2016--advanced-session--index-md.a1eaa4d0.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--admin-training-2016--basics-session--index-md.7fb1f692.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--admin-training-2016--index-md.2736b88b.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--admin-training-2016--logistics--index-md.1d3ec2e7.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--admin-training-2016--publicity--index-md.10a7dec4.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--admin-training-2016--registration--index-md.243919fa.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2012--abstracts--index-md.07bebed0.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2012--index-md.b643de79.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2012--key-dates--index-md.cd7f5bab.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2012--lightning-talks--index-md.1ea6a2be.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2012--logistics--index-md.bbb293c7.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2012--organizing-committee--index-md.e33a96f7.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2012--photos--index-md.c9eb84e9.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2012--program--breakouts--automation-strategies--index-md.b0dd7d36.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2012--program--breakouts--bioinformatics-training--index-md.c66395f2.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2012--program--breakouts--end-users--index-md.92efcf47.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2012--program--breakouts--workflows-and-api--index-md.2585c8fc.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2012--program--index-md.61f58dea.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2012--promotion--index-md.370ce6c7.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2012--register--index-md.3a34b5c6.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2012--sponsorships--index-md.80b6e3c6.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2012--training-day--index-md.37ed9dcb.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--abstracts--index-md.c62221b7.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--abstracts--posters--index-md.403d5b7d.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--abstracts--talks--index-md.9a5e849e.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--bof--clinical-use-hpc-file-systems--index-md.792646bb.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--bof--galaxy-admins--index-md.b635858d.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--bof--galaxy-blast--index-md.cda85a41.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--bof--galaxy-professionals--index-md.a1706934.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--bof--index-md.51f414f1.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--bof--proteomics--index-md.e87ea446.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--bof--public-galaxy-servers--index-md.267b4508.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--bof--tool-developers--index-md.02762d49.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--index-md.575f12ed.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--key-dates--index-md.de8363f6.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--lightning--index-md.23ca5397.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--logistics--index-md.f1cec471.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--organizers--index-md.34a91ba3.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--photos--index-md.b456319a.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--program--index-md.8e66af1e.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--promotion--index-md.8a9fad26.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--register--index-md.3d2ac480.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--sponsorships--index-md.2774e3b6.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--training-day--advance-tool-data--index-md.9b88717b.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--training-day--api--index-md.99599ae1.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--training-day--index-md.31cd88f0.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--training-day--intro-tool-data--index-md.7957e3c4.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2013--training-day--vms--index-md.b872a36f.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--abstracts--index-md.062dec29.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--abstracts--posters--index-md.f774891c.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--abstracts--talks--index-md.121b943b.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--bofs--branch-release-merge--index-md.633a0af8.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--bofs--galaxy-admins--index-md.72e629f9.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--bofs--galaxy-end-users--index-md.c6c89cde.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--bofs--galaxy-training-network--index-md.92c58e52.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--bofs--heterogeneous--index-md.2075137b.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--bofs--index-md.df632db6.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--bofs--using-galaxy-ui-overview--index-md.605944e6.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--hackathon--index-md.9570008f.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--index-md.87f8b2fb.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--key-dates--index-md.e736b37d.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--lightning--index-md.ac92c85f.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--logistics--index-md.c79469db.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--organizers--index-md.d3555e3e.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--photos--index-md.8c3fee2d.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--program--index-md.db7eab9a.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--promotion--index-md.47ce0d62.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--register--index-md.ba42bf7d.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--sponsor-exhibit--index-md.0e66ee6c.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--training-day--admin-walkthrough--index-md.8eebdc4d.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--training-day--api--index-md.9ac232f5.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--training-day--data-managers--index-md.0984054d.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--training-day--index-md.dfffee32.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2014--training-day--vms--index-md.472d8a5e.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2015--bofs--cwl--index-md.f01ed40d.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2015--bofs--data-management-challenges--index-md.9f5f7f96.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2015--bofs--data-splitting-and-parallelism--index-md.b345c888.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2015--bofs--elixir--index-md.22d24786.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2015--bofs--extended-workflow--index-md.d2f10725.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2015--bofs--fots--index-md.ca6db162.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2015--bofs--galaxy-admins--index-md.443ae058.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2015--bofs--galaxy-community-uk--index-md.9f16eb54.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2015--bofs--galaxy-scientists--index-md.6c41adff.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2015--bofs--galaxy-training-network--index-md.b330e6ac.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2015--bofs--index-md.b035b464.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2015--data-hack-roundup--index-md.32493a54.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2015--header--index-md.b1a69b1d.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2015--index-md.702d0661.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2016--bofs--index-md.fd1485d0.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2019--abstracts--index-md.1d27bf13.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2019--childcare--index-md.72ffd7e6.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2019--cofest--index-md.3c617e64.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2019--conduct--index-md.ef37928b.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2019--faq--index-md.ac6528b7.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2019--index-md.1bf29260.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2019--organizers--index-md.df1fc633.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2019--promotion--index-md.b303cb98.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2019--registration--index-md.b88bb0df.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2019--sponsors--index-md.8df6012d.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2019--training--index-md.f88a064b.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gcc-2019--venue--index-md.5444eaac.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gccbosc-2018--abstracts--index-md.f6b9acc2.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gccbosc-2018--childcare--index-md.a252fba9.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gccbosc-2018--code-of-conduct--index-md.ba1f123c.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gccbosc-2018--collaboration--index-md.b6e9d4d7.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gccbosc-2018--faq--index-md.c562ef45.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gccbosc-2018--icebreaker--index-md.82cc905d.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gccbosc-2018--index-md.ff1b004e.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gccbosc-2018--keynotes--index-md.d49dd1a2.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gccbosc-2018--organizers--index-md.9d959ae3.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gccbosc-2018--promotion--index-md.a8a97eb1.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gccbosc-2018--register--index-md.ccce4ebe.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gccbosc-2018--sponsors--index-md.d5c7995b.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gccbosc-2018--training--index-md.f0753da9.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--gccbosc-2018--venue--index-md.bcb28730.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--germany-2014--index-md.f7795bef.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--germany-2016--index-md.5c902846.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--sg-2014--index-md.ed5bba04.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--sg-2016--index-md.7d360067.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--switzerland-2014--index-md.522edd34.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--switzerland-2014--trainingday--index-md.c5ec47f2.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--events--switzerland-2016--index-md.8ccab51f.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--example--vue-remark--index-md.ad9c19d3.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--faqs--index-md.a86a54f5.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--galaxy-updates--2013-06--index-md.9d5c66d5.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--galaxy-updates--2013-07--index-md.8be8b338.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--images--icons--index-md.77b14227.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--images--index-md.6683c9f2.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--images--logos--index-md.a12921e9.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--images--news-graphics--index-md.88aff308.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--images--photos--index-md.297ad832.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--images--screenshots--index-md.24883dfb.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--learn--advanced-workflow--basic-editing--index-md.d71f250c.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--learn--advanced-workflow--basic-editing--workflow-editor-unannotated--index-md.d3074155.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--learn--advanced-workflow--extract--index-md.5d3909cf.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--learn--advanced-workflow--tool-panel--index-md.b952af30.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--learn--advanced-workflow--variables--index-md.edecd104.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--learn--faq--index-md.89e81311.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--learn--galaxy-pages--index-md.08dbfe01.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--learn--interval-operations--index-md.9265136b.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--main--faq--index-md.d8e143e0.js"><link rel="prefetch" href="/assets/js/vue-remark--build--content-vue--tools--requirements--index-md.ef64cb37.js"><link rel="stylesheet" href="/assets/css/0.styles.28333459.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <div data-server-rendered="true" id="app" class="layout" data-v-3a128d75><header id="masthead"><nav class="container navbar navbar-expand-lg navbar-dark justify-content-center"><a href="/" class="navbar-brand active"><img id="masthead-logo" src="/images/galaxy_logo_hub_white.svg" alt="Galaxy Community Hub" height="30"></a><div id="navbarToggleWrapper" class="collapse navbar-collapse mx-auto"><ul class="navbar-nav"><li class="nav-item"><a href="/use/" role="button" aria-expanded="false" class="nav-link dropdown">
+          Use
+        </a></li><li class="nav-item dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+          Learn
+          <span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/learn/" class="dropdown-item">How to use Galaxy</a></li><li><a href="https://training.galaxyproject.org/" class="dropdown-item">Teach with Galaxy</a></li></ul></li><li class="nav-item dropdown"><a href="#" data-toggle="dropdown" role="button" class="nav-link dropdown-toggle">
+          Community
+          <span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/community/" class="dropdown-item">About</a></li><li><a href="/events/" class="dropdown-item active">Events</a></li><li><a href="/news/" class="dropdown-item">News</a></li><li><a href="/blog/" class="dropdown-item">Blog</a></li><li><a href="/publication-library/" class="dropdown-item">Publications</a></li><li><a href="/galaxy-project/statistics/" class="dropdown-item">Stats</a></li><li><a href="/careers/" class="dropdown-item">Careers</a></li></ul></li><li class="nav-item dropdown"><a href="#" data-toggle="dropdown" role="button" class="nav-link dropdown-toggle">
+          Deploy &amp; Develop
+          <span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/admin/get-galaxy/" class="dropdown-item">Install Galaxy</a></li><li><a href="/admin/" class="dropdown-item">Server administration</a></li><li><a href="/tools/" class="dropdown-item">Tools</a></li><li><a href="/develop/api/" class="dropdown-item">Working with the API</a></li><li><a href="/develop/" class="dropdown-item">Contributing</a></li><li><a href="/docs/" class="dropdown-item">Code documentation</a></li></ul></li><li class="nav-item dropdown"><a href="#" data-toggle="dropdown" role="button" class="nav-link dropdown-toggle">
+          Support
+          <span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/support/" class="dropdown-item">FAQ</a></li><li><a href="https://help.galaxyproject.org/" class="dropdown-item">Galaxy Help Forum</a></li></ul></li><li class="nav-item"><a href="/jxtx/" role="button" aria-expanded="false" class="nav-link dropdown">
+          @jxtx
+        </a></li></ul></div></nav></header><section id="maincontainer" class="container"><a href="/" class="link active" data-v-3a128d75> ← Home</a><header data-v-3a128d75><!----><h1 class="title" data-v-3a128d75>Workshop 14: Running a Local Galaxy Instance</h1><div class="metadata" data-v-3a128d75><!----><!----><!----></div></header><div class="content markdown" data-v-3a128d75><p><a href="http://bioteam.net/company-leadership/" target="_blank" rel="noopener noreferrer">Adam Kraut</a>, <a href="/people/nate/">Nate Coraor</a>, <a href="http://bioteam.net/company-leadership/" target="_blank" rel="noopener noreferrer">Anushka Brownley</a>, Tristan Lubinski, <a href="http://www.sgi.com/solutions/genomics" target="_blank" rel="noopener noreferrer">James Reaney</a></p>
+<br />
+![](https://dev.twitter.com/sites/default/files/images_documentation/bird_blue_16.png) #usegalaxy #BioIT2014
+<p>This page covers the follow-along steps of the workshop. Other material from the workshop may be found on  <a href="/events/bioitworld2014/">Events/BioITWorld2014</a> or <a href="http://www.bio-itworldexpo.com/Bio-It_Expo_Content.aspx?id=135152" target="_blank" rel="noopener noreferrer">the Bio-IT World Expo workshop details page</a>.</p>
+<p>For this workshop we will be using virtual machines on an SGI UV system at Penn State (provided by workshop sponsor SGI). You will need an SSH client (<code>ssh</code> in Terminal on OS X and Linux, or e.g. <a href="http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe" target="_blank" rel="noopener noreferrer">PuTTY</a> on Windows). Login details for the virtual machines are:</p>
+<table>
+  <tr>
+    <th> Hostnames </th>
+    <td> <code>bioit[1-39].galaxyproject.org</code> </td>
+  </tr>
+  <tr>
+    <th> Username </th>
+    <td> <code>ubuntu</code> </td>
+  </tr>
+  <tr>
+    <th> Password </th>
+    <td> <code>galaxy</code> </td>
+  </tr>
+</table>
+<p>The virtual machines are running a bare installation of Ubuntu 14.04 LTS.</p>
+<p><strong>Please use Firefox or Chrome for this tutorial.</strong> Galaxy is compatible with all modern versions of Firefox, Chrome, Safari, and Internet Explorer. However, for the purposes of this tutorial it will help us when assisting people encountering problems if only Firefox or Chrome are used.</p>
+<h1 id="setting-up-a-local-galaxy-tutorial-part-i"><a href="#setting-up-a-local-galaxy-tutorial-part-i" aria-hidden="true"><span class="icon icon-link"></span></a>Setting up a Local Galaxy Tutorial (Part I)</h1>
+<h2 id="clone-download-galaxy"><a href="#clone-download-galaxy" aria-hidden="true"><span class="icon icon-link"></span></a>Clone (download) Galaxy</h2>
+<p>The Galaxy distribution is found at <a href="https://bitbucket.org/galaxy/galaxy-dist/" target="_blank" rel="noopener noreferrer">https://bitbucket.org/galaxy/galaxy-dist/</a>, but for the purposes of this workshop, we'll use a trimmed version to decrease the time it takes to clone.</p>
+<pre><code class="language-console">ubuntu@bioit:~$ hg clone https://bitbucket.org/natefoo/galaxy-bioit galaxy-dist
+The program 'hg' is currently not installed. You can install it by typing:
+sudo apt-get install mercurial
+ubuntu@bioit:~$
+</code></pre>
+<p>An introduction to the system package manager (APT):</p>
+<pre><code class="language-console">ubuntu@bioit:~$ sudo apt-get update
+[sudo] password for ubuntu: galaxy
+  ...
+Fetched 179 kB in 4s (41.2 kB/s)
+Reading package lists... Done
+ubuntu@bioit:~$ sudo apt-get install mercurial
+  ...
+After this operation, 86.7 MB of additional disk space will be used.
+Do you want to continue? [Y/n]
+  ...
+ubuntu@bioit:~$
+</code></pre>
+<p>Trying again:</p>
+<pre><code class="language-console">ubuntu@bioit:~$ hg clone https://bitbucket.org/natefoo/galaxy-bioit galaxy-dist
+requesting all changes
+adding changesets
+adding manifests
+adding file changes
+added 8 changesets with 3443 changes to 3443 files
+updating to branch default
+3443 files updated, 0 files merged, 0 files removed, 0 files unresolved
+ubuntu@bioit:~/galaxy-dist$
+</code></pre>
+<h3 id="references"><a href="#references" aria-hidden="true"><span class="icon icon-link"></span></a>References</h3>
+<ul>
+<li><a href="http://getgalaxy.org" target="_blank" rel="noopener noreferrer">getgalaxy.org</a></li>
+<li><a href="https://wiki.galaxyproject.org" target="_blank" rel="noopener noreferrer">Galaxy Wiki/documentation</a></li>
+</ul>
+<h2 id="update-to-the-stable-branch"><a href="#update-to-the-stable-branch" aria-hidden="true"><span class="icon icon-link"></span></a>Update to the stable branch</h2>
+<pre><code class="language-console">ubuntu@bioit:~$ cd galaxy-dist
+ubuntu@bioit:~/galaxy-dist$ hg update stable
+0 files updated, 0 files merged, 0 files removed, 0 files unresolved
+ubuntu@bioit:~/galaxy-dist$
+</code></pre>
+<h2 id="start-galaxy"><a href="#start-galaxy" aria-hidden="true"><span class="icon icon-link"></span></a>Start Galaxy</h2>
+<pre><code class="language-console">ubuntu@bioit:~/galaxy-dist$ sh run.sh
+Initializing datatypes_conf.xml from datatypes_conf.xml.sample
+  ...
+Some eggs are out of date, attempting to fetch...
+Fetched http://scofield.galaxyproject.org/eggs/Mako/Mako-0.4.1-py2.7.egg
+  ...
+Fetch successful.
+python path is: /home/ubuntu/galaxy-dist/eggs/mercurial-2...
+  ...
+Starting server in PID 3091.
+serving on http://127.0.0.1:8080
+</code></pre>
+<h2 id="serve-over-public-interface"><a href="#serve-over-public-interface" aria-hidden="true"><span class="icon icon-link"></span></a>Serve over public interface</h2>
+<p>Stop Galaxy by hitting <code>CTRL-c</code>:</p>
+<pre><code class="language-console">serving on http://127.0.0.1:8080
+^Cgalaxy.jobs.handler INFO 2014-04-23 13:27:59,203 sending stop signal to worker thread
+galaxy.jobs.handler INFO 2014-04-23 13:27:59,204 job handler queue stopped
+galaxy.jobs.runners INFO 2014-04-23 13:27:59,204 LWRRunner: Sending stop signal to monitor thread
+galaxy.jobs.runners INFO 2014-04-23 13:27:59,204 LWRRunner: Sending stop signal to 3 worker threads
+galaxy.jobs.runners INFO 2014-04-23 13:27:59,204 LocalRunner: Sending stop signal to 5 worker threads
+galaxy.jobs.handler INFO 2014-04-23 13:27:59,205 sending stop signal to worker thread
+galaxy.jobs.handler INFO 2014-04-23 13:27:59,205 job handler stop queue stopped
+ubuntu@bioit:~/galaxy-dist$
+</code></pre>
+<p>Edit the primary Galaxy configuration file, <code>universe_wsgi.ini</code>. If you are not familiar with <code>vi</code>, I suggest using <code>nano</code> instead.</p>
+<pre><code class="language-console">ubuntu@bioit:~/galaxy-dist$ vi universe_wsgi.ini
+</code></pre>
+<p>In the <code>[server:main]</code> section, uncomment <code>#host = 127.0.0.1</code> and set:</p>
+<pre><code class="language-ini">host = 0.0.0.0
+</code></pre>
+<p>While we are in the config, we should set two options necessary for the next section. The file is large and it's easiest to search for these (<code>/&#x3C;pattern></code> in vi, <code>CTRL-w</code> <code>&#x3C;pattern></code> in nano):</p>
+<pre><code class="language-ini">[app:main]
+admin_users = nate@bx.psu.edu
+tool_dependency_dir = /home/ubuntu/tool_deps
+</code></pre>
+<p>Then save and quit (<code>CTRL-x</code> <code>y</code> <code>ENTER</code> in nano). Start Galaxy again:</p>
+<pre><code class="language-console">ubuntu@bioit:~/galaxy-dist$ sh run.sh
+  ...
+Starting server in PID 3298.
+serving on 0.0.0.0:8080 view at http://127.0.0.1:8080
+</code></pre>
+<p>The message <code>view at http://127.0.0.1:8080</code> is generated by the embedded webserver and cannot be changed so it is not entirely accurate, but <code>serving on 0.0.0.0:8080</code> reveals that the server is now listening on public interfaces.</p>
+<table>
+  <tr class="th" >
+    <th colspan=10 style=" text-align: center;"> VM Galaxy Instances </th>
+  </tr>
+  <tr>
+    <td> <a href='http://bioit0.galaxyproject.org:8080'>bioit0</a> </td>
+    <td> <a href='http://bioit1.galaxyproject.org:8080'>bioit1</a> </td>
+    <td> <a href='http://bioit2.galaxyproject.org:8080'>bioit2</a> </td>
+    <td> <a href='http://bioit3.galaxyproject.org:8080'>bioit3</a> </td>
+    <td> <a href='http://bioit4.galaxyproject.org:8080'>bioit4</a> </td>
+    <td> <a href='http://bioit5.galaxyproject.org:8080'>bioit5</a> </td>
+    <td> <a href='http://bioit6.galaxyproject.org:8080'>bioit6</a> </td>
+    <td> <a href='http://bioit7.galaxyproject.org:8080'>bioit7</a> </td>
+    <td> <a href='http://bioit8.galaxyproject.org:8080'>bioit8</a> </td>
+    <td> <a href='http://bioit9.galaxyproject.org:8080'>bioit9</a> </td>
+  </tr>
+  <tr>
+    <td> <a href='http://bioit10.galaxyproject.org:8080'>bioit10</a> </td>
+    <td> <a href='http://bioit11.galaxyproject.org:8080'>bioit11</a> </td>
+    <td> <a href='http://bioit12.galaxyproject.org:8080'>bioit12</a> </td>
+    <td> <a href='http://bioit13.galaxyproject.org:8080'>bioit13</a> </td>
+    <td> <a href='http://bioit14.galaxyproject.org:8080'>bioit14</a> </td>
+    <td> <a href='http://bioit15.galaxyproject.org:8080'>bioit15</a> </td>
+    <td> <a href='http://bioit16.galaxyproject.org:8080'>bioit16</a> </td>
+    <td> <a href='http://bioit17.galaxyproject.org:8080'>bioit17</a> </td>
+    <td> <a href='http://bioit18.galaxyproject.org:8080'>bioit18</a> </td>
+    <td> <a href='http://bioit19.galaxyproject.org:8080'>bioit19</a> </td>
+  </tr>
+  <tr>
+    <td> <a href='http://bioit20.galaxyproject.org:8080'>bioit20</a> </td>
+    <td> <a href='http://bioit21.galaxyproject.org:8080'>bioit21</a> </td>
+    <td> <a href='http://bioit22.galaxyproject.org:8080'>bioit22</a> </td>
+    <td> <a href='http://bioit23.galaxyproject.org:8080'>bioit23</a> </td>
+    <td> <a href='http://bioit24.galaxyproject.org:8080'>bioit24</a> </td>
+    <td> <a href='http://bioit25.galaxyproject.org:8080'>bioit25</a> </td>
+    <td> <a href='http://bioit26.galaxyproject.org:8080'>bioit26</a> </td>
+    <td> <a href='http://bioit27.galaxyproject.org:8080'>bioit27</a> </td>
+    <td> <a href='http://bioit28.galaxyproject.org:8080'>bioit28</a> </td>
+    <td> <a href='http://bioit29.galaxyproject.org:8080'>bioit29</a> </td>
+  </tr>
+  <tr>
+    <td> <a href='http://bioit30.galaxyproject.org:8080'>bioit30</a> </td>
+    <td> <a href='http://bioit31.galaxyproject.org:8080'>bioit31</a> </td>
+    <td> <a href='http://bioit32.galaxyproject.org:8080'>bioit32</a> </td>
+    <td> <a href='http://bioit33.galaxyproject.org:8080'>bioit33</a> </td>
+    <td> <a href='http://bioit34.galaxyproject.org:8080'>bioit34</a> </td>
+    <td> <a href='http://bioit35.galaxyproject.org:8080'>bioit35</a> </td>
+    <td> <a href='http://bioit36.galaxyproject.org:8080'>bioit36</a> </td>
+    <td> <a href='http://bioit37.galaxyproject.org:8080'>bioit37</a> </td>
+    <td> <a href='http://bioit38.galaxyproject.org:8080'>bioit38</a> </td>
+    <td> <a href='http://bioit39.galaxyproject.org:8080'>bioit39</a> </td>
+  </tr>
+</table>
+<h2 id="installing-tools-from-the-tool-shed"><a href="#installing-tools-from-the-tool-shed" aria-hidden="true"><span class="icon icon-link"></span></a>Installing tools from the Tool Shed</h2>
+<h3 id="topics-for-this-section"><a href="#topics-for-this-section" aria-hidden="true"><span class="icon icon-link"></span></a>Topics for this section</h3>
+<ul>
+<li>
+<p>What is a Galaxy tool?</p>
+<ul>
+<li>Basic: An XML description of the tool's interface, allowing Galaxy to render a UI (tool form), as well as the command line to execute.</li>
+<li>Complex: XML + wrapper scripts and interfaces to external dependencies</li>
+</ul>
+</li>
+<li>
+<p>Exploring preinstalled tools and filesystem layout</p>
+<ul>
+<li><code>galaxy-dist/tool_conf.xml</code></li>
+<li><code>galaxy-dist/tools/</code></li>
+<li>Example simple tool: <code>galaxy-dist/tools/filters/sorter.xml</code> (tool xml), <code>galaxy-dist/tools/filters/sorter.py</code> (tool code)</li>
+<li>Example tool with unmet dependencies: <code>galaxy-dist/tools/sr_mapping/mosaik.xml</code></li>
+</ul>
+</li>
+<li>
+<p>The Tool Shed</p>
+<ul>
+<li>Installing tools from the Tool Shed</li>
+<li>Exploring the filesystem layout of tools installed from the Tool Shed</li>
+</ul>
+</li>
+</ul>
+<h3 id="install-a-tool-from-the-tool-shed"><a href="#install-a-tool-from-the-tool-shed" aria-hidden="true"><span class="icon icon-link"></span></a>Install a tool from the Tool Shed</h3>
+<pre><code class="language-wiki">**You will need to enable 3rd-party cookies in your browser for Tool Shed installations to work:**
+
+  * Chrome: Settings -> Show advanced settings... -> Privacy -> Content Settings... -> Block third-party cookies and site data -> *uncheck*
+  * Firefox: Settings -> Privacy -> History -> Firefox will: *Remember history* **or** Firefox will: *Use custom settings for history* -> Accept third-party cookies: *Always*
+
+Reload the Galaxy interface if your 3rd party cookies were not previously enabled.```
+
+
+&#x3C;br />
+* Register an account that matches the address you set in `admin_users`
+* Follow the [tutorial on installing tools from the Tool Shed](/src/admin/tools/add-tool-from-toolshed-tutorial/index.md). In brief:
+  * Click **Admin** from the masthead
+  * Click **Search and browse tool sheds** from the left panel
+  * Click the popup icon for **Galaxy main tool shed** and select **Search for valid tools**
+  * Search for **Tool name**s that contain the name `bwa`
+  * Click the popup icon for **bwa_wrappers** and select **Install to Galaxy**
+  * Select the **NGS: Mapping** section and click **Install to Galaxy**
+* Tools (XML, wrapper scripts) are installed in `/home/ubuntu/shed_tools`
+* Tool dependencies (binaries) are installed in `/home/ubuntu/tool_deps`
+
+### References
+
+* [Tools hub page](/src/tools/index.md)
+* [Tutorial on adding custom tools](/src/admin/tools/add-tool-tutorial/index.md)
+* [Tutorial on installing tools from the Tool Shed](/src/admin/tools/add-tool-from-toolshed-tutorial/index.md)
+* [Current tools/ directory](https://bitbucket.org/galaxy/galaxy-central/src/3b42725359224832317a066d95dff596f93ab33f/tools?at=stable)
+* [Tool Shed hub page](/src/toolshed/index.md)
+* [Tool Shed tour](/src/toolshed/tour/index.md)
+* [Galaxy Main Tool Shed](http://toolshed.g2.bx.psu.edu/)
+
+## Managing local data
+
+### Topics for this section
+
+* What is local data?
+* Manual data inclusion
+  * Building indexes on the command line
+  * `.loc` files
+  * `tool_data_table_conf.xml`
+  * Example of the above with bwa and S. cerevisiae (sacCer2) [transcript](/src/events/bio-it-world2014/w14/index.md#adding-local-data-by-hand)
+* Galaxy Data Managers
+
+### Adding local data with a Galaxy Data Manager
+
+Install data managers for fetching the reference genome and building BWA indexes:
+
+* Click **Admin** from the masthead
+* Click **Search and browse tool sheds** from the left panel
+* Click the popup icon for **Galaxy main tool shed** and select **Search for valid tools**
+* Search for **Tool id**s that contain the name `manager`
+* Check **data_manager_fetch_genome_all_fasta** and **data_manager_bwa_index_builder**, then click **Install to Galaxy** (at the bottom of the page)
+* Click **Install**
+
+Fetch reference genome (fasta):
+
+* Click **Manage local data (beta)** from the left panel
+* Click **Reference Genome - fetching**
+* In the **DBKEY to assign to data:** field, type `sacCer2`
+* In the **UCSC's DBKEY for source FASTA:** field, type `sacCer2`
+* Click **Execute**
+
+Build BWA indexes:
+
+* Click **Manage local data (beta)** from the left panel
+* Click **BWA index - builder**
+* Click **Execute**
+
+Upon completion:
+
+* `galaxy-dist/tool-data/sacCer2/seq/sacCer2.fa` has been created from chromosome fastas fetched from UCSC
+* `galaxy-dist/tool-data/sacCer2/bwa_index/sacCer2.fa.*` indexes have been generated with `bwa index`
+* `galaxy-dist/tool-data/toolshed.g2.bx.psu.edu/repos/devteam/data_manager_fetch_genome_all_fasta/2ebc856bce29/all_fasta.loc` contains a reference to the newly created `sacCer2.fa`
+* `galaxy-dist/tool-data/toolshed.g2.bx.psu.edu/repos/devteam/data_manager_bwa_index_builder/367878cb3698/bwa_index.loc` contains a reference to the newly built bwa indexes
+* `galaxy-dist/shed_tool_data_table_conf.xml` includes entries for the `all_fasta` and `bwa_indexes` data tables
+
+### References
+
+* [(Manual) index building](/src/admin/data-preparation/index.md)
+* [(Manual) data integration](/src/admin/data-integration/index.md)
+* [Automated data management with Data Managers](/src/admin/tools/data-managers/index.md)
+
+# Setting up a Local Galaxy Tutorial (Part II)
+
+Documentation for the features used in this section can be found at [usegalaxy.org/production](https://usegalaxy.org/production) (forwards to [Admin/Config/Performance/ProductionServer](/src/admin/config/performance/production-server/index.md))
+
+## Install and configure PostgreSQL
+
+```hightlight console
+ubuntu@bioit:~$ sudo apt-get install postgresql
+  ...
+After this operation, 15.5 MB of additional disk space will be used.
+Do you want to continue? [Y/n]
+  ...
+Creating new cluster 9.3/main ...
+  config /etc/postgresql/9.3/main
+  data   /var/lib/postgresql/9.3/main
+  locale en_US.UTF-8
+  port   5432
+* Starting PostgreSQL 9.3 database server
+    ...done.
+
+ubuntu@bioit:~$ sudo -u postgres createuser galaxy
+ubuntu@bioit:~$ sudo -u postgres createdb -O galaxy galaxy
+</code></pre>
+<h2 id="create-a-new-user-for-galaxy"><a href="#create-a-new-user-for-galaxy" aria-hidden="true"><span class="icon icon-link"></span></a>Create a new user for Galaxy</h2>
+<pre><code class="language-console">ubuntu@bioit:~$ sudo useradd -m -s /bin/bash galaxy
+ubuntu@bioit:~$
+</code></pre>
+<h2 id="create-a-python-virtual-environment"><a href="#create-a-python-virtual-environment" aria-hidden="true"><span class="icon icon-link"></span></a>Create a Python virtual environment</h2>
+<pre><code class="language-console">ubuntu@bioit:~$ sudo apt-get install python-virtualenv
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following extra packages will be installed:
+  ...
+Do you want to continue? [Y/n]
+  ...
+Get:1 http://us.archive.ubuntu.com/ubuntu/ trusty/main libasan0 amd64 4.8.2-19ubuntu1 [63.0 kB]
+  ...
+Processing triggers for libc-bin (2.19-0ubuntu6) ...
+ubuntu@bioit:~$ sudo -iu galaxy
+galaxy@bioit:~$ virtualenv venv
+New python executable in venv/bin/python
+Installing setuptools, pip...done.
+galaxy@bioit:~$ source ./venv/bin/activate
+(venv)galaxy@bioit:~$
+</code></pre>
+<h2 id="clone-download-galaxy-1"><a href="#clone-download-galaxy-1" aria-hidden="true"><span class="icon icon-link"></span></a>Clone (download) Galaxy</h2>
+<pre><code class="language-console">galaxy@bioit:~$ hg clone https://bitbucket.org/natefoo/galaxy-bioit galaxy-dist
+requesting all changes
+adding changesets
+adding manifests
+adding file changes
+added 8 changesets with 3443 changes to 3443 files
+updating to branch default
+3443 files updated, 0 files merged, 0 files removed, 0 files unresolved
+galaxy@bioit:~$ cd galaxy-dist
+galaxy@bioit:~/galaxy-dist$ hg update stable
+0 files updated, 0 files merged, 0 files removed, 0 files unresolved
+galaxy@bioit:~/galaxy-dist$
+</code></pre>
+<h2 id="configure-galaxy"><a href="#configure-galaxy" aria-hidden="true"><span class="icon icon-link"></span></a>Configure Galaxy</h2>
+<pre><code class="language-console">galaxy@bioit:~/galaxy-dist$ cp universe_wsgi.ini.sample universe_wsgi.ini
+galaxy@bioit:~/galaxy-dist$ vi universe_wsgi.ini
+</code></pre>
+<p>Add the following section for uWSGI's configuration and the job handler processes</p>
+<pre><code class="language-ini">[uwsgi]
+socket = 127.0.0.1:4001
+stats = 127.0.0.1:9191
+processes = 2
+threads = 4
+master = True
+logto = /home/galaxy/uwsgi.log
+pythonpath = lib
+
+[server:handler0]
+use = egg:Paste#http
+port = 9010
+use_threadpool = True
+threadpool_workers = 10
+
+[server:handler1]
+use = egg:Paste#http
+port = 9011
+use_threadpool = True
+threadpool_workers = 10
+</code></pre>
+<p>Set the following settings in the <code>[app:main]</code> section:</p>
+<pre><code class="language-ini">database_connection = postgresql:///galaxy?host=/var/run/postgresql
+database_engine_option_server_side_cursors = True
+database_engine_option_strategy = threadlocal
+tool_dependency_dir = /home/galaxy/tool_deps
+static_enabled = False
+nginx_x_accel_redirect_base = /_x_accel_redirect
+nginx_upload_store = /home/galaxy/uploads
+nginx_upload_path = /_upload
+log_events = False
+log_actions = False
+debug = False
+use_interactive = False
+id_secret = &#x3C;random text>
+admin_users = nate@bx.psu.edu
+</code></pre>
+<p>Explanations of these options:</p>
+<ul>
+<li><code>database_connection = postgresql:///galaxy?host=/var/run/postgresql</code> - Use a PostgreSQL database via a local UNIX domain socket (the socket is in <code>/var/run/postgresql</code>). <a href="https://docs.galaxyproject.org/en/latest/admin/production.html#switching-to-postgresql-database-server" target="_blank" rel="noopener noreferrer">documentation</a></li>
+<li><code>database_engine_option_server_side_cursors = True</code> - Keep large SQL query results on the PostgreSQL server, rather the transferring the entire result set to the Galaxy processes.</li>
+<li><code>database_engine_option_strategy = threadlocal</code> - Only use one database connection per thread</li>
+<li><code>tool_dependency_dir = /home/galaxy/tool_deps</code> - The directory that will house tool dependencies</li>
+<li><code>static_enabled = False</code> - Static content will be served by the proxy server</li>
+<li><code>nginx_x_accel_redirect_base = /_x_accel_redirect</code> - Delegate dataset downloads to nginx</li>
+<li><code>nginx_upload_store = /home/galaxy/uploads</code> - Delegate uploads to nginx, set temporary directory</li>
+<li><code>nginx_upload_path = /_upload</code> - Special path configured in nginx where uploads will be POSTed</li>
+<li><code>log_events = False</code> - Don't log events in the database (faster)</li>
+<li><code>log_actions = False</code> - Don't log actions in the database (faster)</li>
+<li><code>debug = False</code> - Disables debugging middleware that loads server responses in to memory (can crash the server when handling large files)</li>
+<li><code>use_interactive = False</code> - Disables live client browser debugging (insecure).</li>
+<li><code>id_secret = &#x3C;random text></code> - Ensures that the encoded IDs used by Galaxy (especially session IDs) are unique.  One simple way to generate a value for this is with a shell command like <code>$ date | md5sum</code></li>
+<li><code>admin_users = nate@bx.psu.edu</code> - Make nate@example.org an administrator. Galaxy's Admin UI is only accessible if you define administrators here!</li>
+</ul>
+<p>Honorable mentions for features we won't use today but that are common in big setups:</p>
+<ul>
+<li><code>ftp_upload_dir</code> and <code>ftp_upload_site</code> - Allow users to upload data to the server using FTP</li>
+<li><code>use_remote_user</code> and <code>remote_user_maildomain</code> - Use your institution's existing authentication system to log in to Galaxy. <a href="/admin/config/ExternalUserDatbases/">Apache documentation</a> or <a href="https://galaxyproject.org/admin/config/nginx-external-user-auth/#nginx-external-authentication" target="_blank" rel="noopener noreferrer">nginx documentation</a></li>
+<li><code>allow_user_impersonation</code> - Users configured as administrators (with <code>admin_users</code>) can "become" other users to view Galaxy exactly as the impersonated user does. Useful for providing support.</li>
+<li><code>library_import_dir</code> - Administrators can directly import datasets from this directory on the server to Data Libraries.  This includes an option that allows an effective "symlink" to the data, rather than copying it in to Galaxy's <code>file_path</code> directory. <a href="/admin/data-libraries/uploading-library-files/">documentation</a></li>
+<li><code>user_library_import_dir</code> - Non-administrators can directly import datasets from this directory on this server to Data Libraries from which they have been given write permission. <a href="/admin/data-libraries/uploading-library-files/">documentation</a></li>
+<li><code>allow_library_path_paste</code> - Administrators can import datasets from anywhere on the server's filesystem(s) by entering their paths in to a text box</li>
+<li><code>object_store_config_file</code> - Configure Galaxy's "object storage" layer to store data in multiple filesystems, Amazon S3, iRODS, etc.</li>
+<li><code>error_email_to</code> (with <code>smtp_server</code>) - Allow users to send bug reports directly to you</li>
+<li><code>user_activation_on</code> and related options - Require new users to verify their email address</li>
+<li><code>allow_user_dataset_purge = True</code> - Allow users to forcibly remove their datasets from disk (note that the data is only actually removed if all versions of a shared dataset are purged by all users who are sharing the dataset). By default, Galaxy does not remove data, as this is done at a later time by the dataset cleanup scripts.</li>
+<li><code>enable_quotas = True</code> - Enable Galaxy's quota system. Quotas are configured by administrators in the Galaxy Admin UI</li>
+</ul>
+<p>Create a job system configuration:</p>
+<pre><code class="language-console">galaxy@bioit:~/galaxy-dist$ vi job_conf.xml
+</code></pre>
+<p>In the editor, paste:</p>
+<pre><code class="language-xml">&#x3C;?xml version="1.0"?>
+&#x3C;job_conf>
+    &#x3C;plugins workers="2">
+        &#x3C;plugin id="gridengine" type="runner" load="galaxy.jobs.runners.drmaa:DRMAAJobRunner"/>
+    &#x3C;/plugins>
+    &#x3C;handlers default="handlers">
+        &#x3C;handler id="handler0" tags="handlers"/>
+        &#x3C;handler id="handler1" tags="handlers"/>
+    &#x3C;/handlers>
+    &#x3C;destinations default="gridengine">
+        &#x3C;destination id="gridengine" runner="gridengine"/>
+    &#x3C;/destinations>
+    &#x3C;limits>
+        &#x3C;limit type="registered_user_concurrent_jobs">2&#x3C;/limit>
+        &#x3C;limit type="unregistered_user_concurrent_jobs">1&#x3C;/limit>
+        &#x3C;limit type="job_walltime">24:00:00&#x3C;/limit>
+    &#x3C;/limits>
+&#x3C;/job_conf>
+</code></pre>
+<h2 id="start-a-galaxy-server-to-complete-first-run-setup"><a href="#start-a-galaxy-server-to-complete-first-run-setup" aria-hidden="true"><span class="icon icon-link"></span></a>Start a Galaxy server to complete first run setup</h2>
+<pre><code class="language-console">galaxy@bioit:~/galaxy-dist$ sh run.sh
+Initializing datatypes_conf.xml from datatypes_conf.xml.sample
+  ...
+serving on http://127.0.0.1:8080
+^C
+  ...
+galaxy@bioit:~/galaxy-dist$ logout
+ubuntu@bioit:~$
+</code></pre>
+<h2 id="install-and-configure-grid-engine"><a href="#install-and-configure-grid-engine" aria-hidden="true"><span class="icon icon-link"></span></a>Install and configure Grid Engine</h2>
+<pre><code class="language-console">ubuntu@bioit:~$ sudo apt-get install gridengine-master gridengine-exec gridengine-client gridengine-drmaa1.0
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following extra packages will be installed:
+  bsd-mailx gridengine-common postfix tcsh
+Suggested packages:
+  gridengine-qmon procmail postfix-mysql postfix-pgsql postfix-ldap postfix-pcre sasl2-bin dovecot-common postfix-cdb mail-reader postfix-doc
+The following NEW packages will be installed:
+  bsd-mailx gridengine-client gridengine-common gridengine-drmaa1.0 gridengine-exec gridengine-master postfix tcsh
+0 upgraded, 8 newly installed, 0 to remove and 5 not upgraded.
+Need to get 9,172 kB of archives.
+After this operation, 51.6 MB of additional disk space will be used.
+Do you want to continue? [Y/n]
+  ...
+Preconfiguring packages ...
+</code></pre>
+<p>You'll be asked a series of configuration questions for Postfix and Grid Engine at this point. The following answers are suitable for this workshop:</p>
+<ul>
+<li>General type of mail configuration: Local only</li>
+<li>System mail name: bioit</li>
+<li>Configure SGE automatically?: Yes</li>
+<li>SGE cell name: default</li>
+<li>SGE master hostname: bioit</li>
+</ul>
+<pre><code class="language-console">ubuntu@bioit:~$ sudo vi /var/lib/gridengine/default/common/host_aliases
+  ...
+localhost bioit
+  ...
+ubuntu@bioit:~$ sudo service gridengine-master restart
+ubuntu@bioit:~$ sudo pkill sge_execd &#x26;&#x26; sudo service gridengine-exec restart
+ubuntu@bioit:~$ sudo qconf -aq all.q
+  ...
+hostlist              localhost
+shell                 /bin/bash
+  ...
+ubuntu@bioit:~$ sudo qconf -as localhost
+localhost added to submit host list
+ubuntu@bioit:~$
+</code></pre>
+<h2 id="install-nginx-uwsgi-and-supervisord"><a href="#install-nginx-uwsgi-and-supervisord" aria-hidden="true"><span class="icon icon-link"></span></a>Install nginx, uWSGI, and supervisord</h2>
+<pre><code class="language-console">ubuntu@bioit:~$ sudo add-apt-repository ppa:natefoo/bioit2014
+ Provides a rebuilt nginx-extras with the upload module for the workshop @
+ Bio-IT World Expo 2014
+ More info: https://launchpad.net/~natefoo/+archive/bioit2014
+Press [ENTER] to continue or ctrl-c to cancel adding it
+
+gpg: keyring `/tmp/tmp71rhd5g3/secring.gpg' created
+gpg: keyring `/tmp/tmp71rhd5g3/pubring.gpg' created
+gpg: requesting key 12788738 from hkp server keyserver.ubuntu.com
+gpg: /tmp/tmp71rhd5g3/trustdb.gpg: trustdb created
+gpg: key 12788738: public key "Launchpad PPA for Nate Coraor" imported
+gpg: Total number processed: 1
+gpg:               imported: 1  (RSA: 1)
+OK
+ubuntu@bioit:~$ sudo apt-get update
+  ...
+﻿﻿Fetched 141 kB in 4s (34.0 kB/s)
+Reading package lists... Done
+ubuntu@bioit:~$ sudo apt-get install nginx-extras uwsgi uwsgi-plugin-python supervisor
+  ...
+After this operation, 10.4 MB of additional disk space will be used.
+Do you want to continue? [Y/n]
+Get:1 http://ppa.launchpad.net/natefoo/bioit2014/ubuntu/ trusty/main nginx-common all 1.4.6-1ubuntu3ppa1 [81.5 kB]
+Get:2 http://ppa.launchpad.net/natefoo/bioit2014/ubuntu/ trusty/main nginx-extras amd64 1.4.6-1ubuntu3ppa1 [570 kB]
+  ...
+ubuntu@bioit:~$ sudo /etc/init.d/nginx stop
+ubuntu@bioit:~$ sudo update-rc.d -f nginx remove
+ Removing any system startup links for /etc/init.d/nginx ...
+   /etc/rc0.d/K20nginx
+   /etc/rc1.d/K20nginx
+   /etc/rc2.d/S20nginx
+   /etc/rc3.d/S20nginx
+   /etc/rc4.d/S20nginx
+   /etc/rc5.d/S20nginx
+   /etc/rc6.d/K20nginx
+ubuntu@bioit:~$ sudo update-rc.d -f uwsgi remove
+ Removing any system startup links for /etc/init.d/uwsgi ...
+   /etc/rc0.d/K20uwsgi
+   /etc/rc1.d/K20uwsgi
+   /etc/rc2.d/S20uwsgi
+   /etc/rc3.d/S20uwsgi
+   /etc/rc4.d/S20uwsgi
+   /etc/rc5.d/S20uwsgi
+   /etc/rc6.d/K20uwsgi
+ubuntu@bioit:~$
+</code></pre>
+<h2 id="configure-nginx"><a href="#configure-nginx" aria-hidden="true"><span class="icon icon-link"></span></a>Configure nginx</h2>
+<pre><code class="language-console">ubuntu@bioit:~$ cd /etc/nginx
+ubuntu@bioit:/etc/nginx$ sudo vi nginx.conf
+  ...
+  user galaxy;
+  daemon off;
+  http {
+      gzip_vary on;
+      gzip_proxied any;
+      gzip_comp_level 6;
+      gzip_buffers 16 8k;
+      gzip_http_version 1.1;
+      gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+  }
+  ...
+ubuntu@bioit:/etc/nginx$ cd sites-available
+ubuntu@bioit:/etc/nginx/sites-available$ sudo vi galaxy
+</code></pre>
+<p>In the editor, paste:</p>
+<pre><code class="language-nginx">client_max_body_size 50g;
+uwsgi_read_timeout 300;
+
+server {
+    listen 80 default_server;
+    server_name  bioit.galaxyproject.org;
+
+    # pass to uWSGI by default
+    location / {
+        uwsgi_pass 127.0.0.1:4001;
+        include uwsgi_params;
+    }
+
+    # serve static content
+    location /static {
+        alias /home/galaxy/galaxy-dist/static;
+        gzip on;
+        gzip_types text/plain text/xml text/javascript text/css application/x-javascript;
+        expires 24h;
+    }
+    location /static/style {
+        alias /home/galaxy/galaxy-dist/static/style/blue;
+        gzip on;
+        gzip_types text/plain text/xml text/javascript text/css application/x-javascript;
+        expires 24h;
+    }
+    location /static/scripts {
+        alias /home/galaxy/galaxy-dist/static/scripts/packed;
+        gzip on;
+        gzip_types text/plain text/javascript application/x-javascript;
+        expires 24h;
+    }
+    location ~ ^/plugins/visualizations/(?&#x3C;vis_name>.+?)/static/(?&#x3C;static_file>.*?)$ {
+        alias /home/galaxy/galaxy-dist/config/plugins/visualizations/$vis_name/static/$static_file;
+    }
+
+    # delegated downloads
+    location /_x_accel_redirect {
+        internal;
+        alias /;
+    }
+
+    # delegated uploads
+    location /_upload {
+        upload_store /home/galaxy/uploads;
+        upload_store_access user:rw;
+        upload_pass_form_field "";
+        upload_set_form_field "__${upload_field_name}__is_composite" "true";
+        upload_set_form_field "__${upload_field_name}__keys" "name path";
+        upload_set_form_field "${upload_field_name}_name" "$upload_file_name";
+        upload_set_form_field "${upload_field_name}_path" "$upload_tmp_path";
+        upload_pass_args on;
+        upload_pass /_upload_done;
+    }
+    location /_upload_done {
+        set $dst /api/tools;
+        if ($args ~ nginx_redir=([^&#x26;]+)) {
+            set $dst $1;
+        }
+        rewrite "" $dst;
+    }
+}
+</code></pre>
+<pre><code class="language-console" class="./sites-enabled/">ubuntu@bioit:/etc/nginx/sites-available$ cd ../sites-enabled/
+ubuntu@bioit:/etc/nginx/sites-enabled$ sudo rm default
+ubuntu@bioit:/etc/nginx/sites-enabled$ sudo ln -s ../sites-available/galaxy
+ubuntu@bioit:/etc/nginx/sites-enabled$
+</code></pre>
+<h2 id="configure-supervisord"><a href="#configure-supervisord" aria-hidden="true"><span class="icon icon-link"></span></a>Configure supervisord</h2>
+<pre><code class="language-console">ubuntu@bioit:~$ cd /etc/supervisor/conf.d
+ubuntu@bioit:/etc/supervisor/conf.d$ sudo vi galaxy.conf
+</code></pre>
+<p>In the editor, paste:</p>
+<pre><code class="language-ini">[program:nginx]
+command     = /usr/sbin/nginx
+directory   = /
+umask       = 022
+autostart   = true
+autorestart = unexpected
+startsecs   = 5
+exitcodes   = 0
+user        = root
+
+[program:galaxy_uwsgi]
+command         = /usr/bin/uwsgi --plugin python --ini-paste /home/galaxy/galaxy-dist/universe_wsgi.ini
+directory       = /home/galaxy/galaxy-dist
+umask           = 022
+autostart       = true
+autorestart     = true
+startsecs       = 10
+user            = galaxy
+environment     = PATH=/home/galaxy/venv:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin,PYTHON_EGG_CACHE=/home/galaxy/.python-eggs,PYTHONPATH=/home/galaxy/galaxy-dist/eggs/PasteDeploy-1.5.0-py2.7.egg
+numprocs        = 1
+stopsignal      = INT
+
+[program:handler]
+command         = /home/galaxy/venv/bin/python ./scripts/paster.py serve universe_wsgi.ini --server-name=handler%(process_num)s --pid-file=/home/galaxy/handler%(process_num)s.pid --log-file=/home/galaxy/handler%(process_num)s.log
+directory       = /home/galaxy/galaxy-dist
+process_name    = handler%(process_num)s
+numprocs        = 2
+umask           = 022
+autostart       = true
+autorestart     = true
+startsecs       = 15
+user            = galaxy
+environment     = PYTHON_EGG_CACHE=/home/galaxy/.python-eggs,DRMAA_LIBRARY_PATH=/usr/lib/gridengine-drmaa/lib/libdrmaa.so.1.0,SGE_ROOT=/var/lib/gridengine
+
+[group:galaxy]
+programs = handler
+</code></pre>
+<h2 id="start-galaxy-and-nginx"><a href="#start-galaxy-and-nginx" aria-hidden="true"><span class="icon icon-link"></span></a>Start Galaxy and nginx</h2>
+<pre><code class="language-console">ubuntu@bioit:~$ sudo supervisorctl update
+galaxy: added process group
+galaxy_uwsgi: added process group
+nginx: added process group
+ubuntu@bioit:~$ sudo supervisorctl status
+galaxy:handler0                  STARTING
+galaxy:handler1                  STARTING
+galaxy_uwsgi                     STARTING
+nginx                            STARTING
+</code></pre>
+<p>You can now visit your Galaxy server at:</p>
+<table>
+  <tr class="th" >
+    <th colspan=10 style=" text-align: center;"> VM Galaxy Instances </th>
+  </tr>
+  <tr>
+    <td> <a href='http://bioit0.galaxyproject.org'>bioit0</a> </td>
+    <td> <a href='http://bioit1.galaxyproject.org'>bioit1</a> </td>
+    <td> <a href='http://bioit2.galaxyproject.org'>bioit2</a> </td>
+    <td> <a href='http://bioit3.galaxyproject.org'>bioit3</a> </td>
+    <td> <a href='http://bioit4.galaxyproject.org'>bioit4</a> </td>
+    <td> <a href='http://bioit5.galaxyproject.org'>bioit5</a> </td>
+    <td> <a href='http://bioit6.galaxyproject.org'>bioit6</a> </td>
+    <td> <a href='http://bioit7.galaxyproject.org'>bioit7</a> </td>
+    <td> <a href='http://bioit8.galaxyproject.org'>bioit8</a> </td>
+    <td> <a href='http://bioit9.galaxyproject.org'>bioit9</a> </td>
+  </tr>
+  <tr>
+    <td> <a href='http://bioit10.galaxyproject.org'>bioit10</a> </td>
+    <td> <a href='http://bioit11.galaxyproject.org'>bioit11</a> </td>
+    <td> <a href='http://bioit12.galaxyproject.org'>bioit12</a> </td>
+    <td> <a href='http://bioit13.galaxyproject.org'>bioit13</a> </td>
+    <td> <a href='http://bioit14.galaxyproject.org'>bioit14</a> </td>
+    <td> <a href='http://bioit15.galaxyproject.org'>bioit15</a> </td>
+    <td> <a href='http://bioit16.galaxyproject.org'>bioit16</a> </td>
+    <td> <a href='http://bioit17.galaxyproject.org'>bioit17</a> </td>
+    <td> <a href='http://bioit18.galaxyproject.org'>bioit18</a> </td>
+    <td> <a href='http://bioit19.galaxyproject.org'>bioit19</a> </td>
+  </tr>
+  <tr>
+    <td> <a href='http://bioit20.galaxyproject.org'>bioit20</a> </td>
+    <td> <a href='http://bioit21.galaxyproject.org'>bioit21</a> </td>
+    <td> <a href='http://bioit22.galaxyproject.org'>bioit22</a> </td>
+    <td> <a href='http://bioit23.galaxyproject.org'>bioit23</a> </td>
+    <td> <a href='http://bioit24.galaxyproject.org'>bioit24</a> </td>
+    <td> <a href='http://bioit25.galaxyproject.org'>bioit25</a> </td>
+    <td> <a href='http://bioit26.galaxyproject.org'>bioit26</a> </td>
+    <td> <a href='http://bioit27.galaxyproject.org'>bioit27</a> </td>
+    <td> <a href='http://bioit28.galaxyproject.org'>bioit28</a> </td>
+    <td> <a href='http://bioit29.galaxyproject.org'>bioit29</a> </td>
+  </tr>
+  <tr>
+    <td> <a href='http://bioit30.galaxyproject.org'>bioit30</a> </td>
+    <td> <a href='http://bioit31.galaxyproject.org'>bioit31</a> </td>
+    <td> <a href='http://bioit32.galaxyproject.org'>bioit32</a> </td>
+    <td> <a href='http://bioit33.galaxyproject.org'>bioit33</a> </td>
+    <td> <a href='http://bioit34.galaxyproject.org'>bioit34</a> </td>
+    <td> <a href='http://bioit35.galaxyproject.org'>bioit35</a> </td>
+    <td> <a href='http://bioit36.galaxyproject.org'>bioit36</a> </td>
+    <td> <a href='http://bioit37.galaxyproject.org'>bioit37</a> </td>
+    <td> <a href='http://bioit38.galaxyproject.org'>bioit38</a> </td>
+    <td> <a href='http://bioit39.galaxyproject.org'>bioit39</a> </td>
+  </tr>
+</table>
+<h2 id="references-1"><a href="#references-1" aria-hidden="true"><span class="icon icon-link"></span></a>References</h2>
+<ul>
+<li><a href="http://uwsgi-docs.readthedocs.org/en/latest/" target="_blank" rel="noopener noreferrer">uWSGI</a></li>
+<li><a href="http://supervisord.org/" target="_blank" rel="noopener noreferrer">Supervisor</a></li>
+<li><a href="http://packaging.ubuntu.com/html/" target="_blank" rel="noopener noreferrer">Ubuntu Packaging Guide</a> - for repackaging <code>nginx-extras</code>, particularly, chapters 4-7 in the Knowledge Base section</li>
+<li><a href="https://code.launchpad.net/~natefoo/ubuntu/trusty/nginx/nginx-upload-module" target="_blank" rel="noopener noreferrer">Modifications to the nginx-extras package</a> - I added the <code>nginx-upload</code> module, which was part of the nginx-extras package in Ubuntu 12.04 LTS ("precise").</li>
+</ul>
+<h1 id="transcripts"><a href="#transcripts" aria-hidden="true"><span class="icon icon-link"></span></a>Transcripts</h1>
+<h2 id="adding-local-data-by-hand"><a href="#adding-local-data-by-hand" aria-hidden="true"><span class="icon icon-link"></span></a>Adding local data by hand</h2>
+<pre><code class="language-console">ubuntu@bioit:~$ mkdir -p ~/local_data/sacCer2/seq/work
+ubuntu@bioit:~$ cd ~/local_data/sacCer2/seq/work
+ubuntu@bioit:~/local_data/sacCer2/seq/work$ rsync -vz rsync://hgdownload.cse.ucsc.edu/goldenPath/sacCer2/bigZips/chromFa.tar.gz .
+chromFa.tar.gz
+
+sent 51 bytes  received 3,824,563 bytes  1,092,746.86 bytes/sec
+total size is 3,823,174  speedup is 1.00
+ubuntu@bioit:~/local_data/sacCer2/seq/work$ tar zxvf chromFa.tar.gz
+2micron.fa
+chrI.fa
+chrII.fa
+chrIII.fa
+chrIV.fa
+chrIX.fa
+chrM.fa
+chrV.fa
+chrVI.fa
+chrVII.fa
+chrVIII.fa
+chrX.fa
+chrXI.fa
+chrXII.fa
+chrXIII.fa
+chrXIV.fa
+chrXV.fa
+chrXVI.fa
+ubuntu@bioit:~/local_data/sacCer2/seq/work$ cat *.fa >../sacCer2.fa
+ubuntu@bioit:~/local_data/sacCer2/seq/work$ cd ../..
+ubuntu@bioit:~/local_data/sacCer2$ mkdir bwa_index
+ubuntu@bioit:~/local_data/sacCer2$ cd bwa_index
+ubuntu@bioit:~/local_data/sacCer2/bwa_index$ ~/tool_deps/bwa/0.5.9/devteam/package_bwa_0_5_9/ec2595e4d313/bin/bwa index -a bwtsw sacCer2.fa
+[bwa_index] Pack FASTA... 0.18 sec
+[bwa_index] Reverse the packed sequence... 0.06 sec
+[bwa_index] Construct BWT for the packed sequence...
+[BWTIncConstructFromPacked] 10 iterations done. 2968163 characters processed.
+[BWTIncConstructFromPacked] 20 iterations done. 5189523 characters processed.
+[BWTIncConstructFromPacked] 30 iterations done. 6938035 characters processed.
+[BWTIncConstructFromPacked] 40 iterations done. 8313523 characters processed.
+[BWTIncConstructFromPacked] 50 iterations done. 9394739 characters processed.
+[BWTIncConstructFromPacked] 60 iterations done. 10243827 characters processed.
+[BWTIncConstructFromPacked] 70 iterations done. 10909811 characters processed.
+[BWTIncConstructFromPacked] 80 iterations done. 11431331 characters processed.
+[BWTIncConstructFromPacked] 90 iterations done. 11838867 characters processed.
+[BWTIncConstructFromPacked] 100 iterations done. 12156547 characters processed.
+[bwt_gen] Finished constructing BWT in 101 iterations.
+[bwa_index] 3.30 seconds elapse.
+[bwa_index] Construct BWT for the reverse packed sequence...
+[BWTIncConstructFromPacked] 10 iterations done. 2968163 characters processed.
+[BWTIncConstructFromPacked] 20 iterations done. 5189523 characters processed.
+[BWTIncConstructFromPacked] 30 iterations done. 6938035 characters processed.
+[BWTIncConstructFromPacked] 40 iterations done. 8313523 characters processed.
+[BWTIncConstructFromPacked] 50 iterations done. 9394739 characters processed.
+[BWTIncConstructFromPacked] 60 iterations done. 10243827 characters processed.
+[BWTIncConstructFromPacked] 70 iterations done. 10909811 characters processed.
+[BWTIncConstructFromPacked] 80 iterations done. 11431331 characters processed.
+[BWTIncConstructFromPacked] 90 iterations done. 11838867 characters processed.
+[BWTIncConstructFromPacked] 100 iterations done. 12156547 characters processed.
+[bwt_gen] Finished constructing BWT in 101 iterations.
+[bwa_index] 3.41 seconds elapse.
+[bwa_index] Update BWT... 0.08 sec
+[bwa_index] Update reverse BWT... 0.07 sec
+[bwa_index] Construct SA from BWT and Occ... 1.03 sec
+[bwa_index] Construct SA from reverse BWT and Occ... 1.02 sec
+ubuntu@bioit:~/local_data/sacCer2/bwa_index$ cd ~/galaxy-dist/tool-data
+ubuntu@bioit:~/galaxy-dist/tool-data$ vim bwa_index.loc
+  ...
+  sacCer2byhand   sacCer2 S. cerevisiae June 2008 (index by hand) /home/ubuntu/local_data/sacCer2/bwa_index/sacCer2.fa
+  ...
+ubuntu@bioit:~/galaxy-dist/tool-data$ cd ..
+ubuntu@bioit:~/galaxy-dist$ vim tool_data_table_conf.xml
+  ...
+  &#x3C;table name="bwa_indexes" comment_char="#">
+      &#x3C;columns>value, dbkey, name, path&#x3C;/columns>
+      &#x3C;file path="tool-data/bwa_index.loc" />
+  &#x3C;/table>
+  ...
+ubuntu@bioit:~/galaxy-dist$ sh run.sh
+  ...
+</code></pre>
+</div><footer class="static-footer markdown"><p>The Galaxy Project is supported in part by NSF, NHGRI, The Huck Institutes of the Life Sciences, The Institute for CyberScience at Penn State, and Johns Hopkins University.</p>
+</footer></section></div>
+    <script src="/assets/js/app.3f954f94.js" defer></script><script src="/assets/js/page--src--templates--article-vue.fd74c3ce.js" defer></script>
+  </body>
+</html>
